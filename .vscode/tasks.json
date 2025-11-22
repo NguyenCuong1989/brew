@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Fetch Remotes and Show Branches",
+			"type": "shell",
+			"command": "bash -lc 'git -C /opt/homebrew fetch --all --prune >/dev/null 2>&1 && echo \"Fetched remotes.\" && git -C /opt/homebrew for-each-ref --format=\"%(refname:short)\" refs/remotes/origin | grep -v \"origin/HEAD\" | head -n 50'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Simple Fetch",
+			"type": "shell",
+			"command": "bash -lc \"git -C /opt/homebrew fetch --all --prune >/dev/null 2>&1; echo 'Fetched remotes'; git -C /opt/homebrew for-each-ref --format='%(refname:short)' refs/remotes/origin | grep -v 'origin/HEAD' | head -n 20\"",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
